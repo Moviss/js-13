@@ -1,4 +1,4 @@
-# JS - Zajęcia #
+# JS - Zajęcia 13
 
 ### Jak uruchomić?
 
