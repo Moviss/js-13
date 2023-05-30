@@ -19,7 +19,11 @@ const handleHighlight = (currentTarget, level) => {
 }
 
 const handleBubbling = (e) => {
+  // e.stopPropagation();
+  // e.stopImmediatePropagation();
+  console.log("target", e.target);
   const currentTarget = e.currentTarget;
+  console.log("currentTarget", currentTarget);
   const currentTargetId = currentTarget.id;
   if (currentTargetId === "descendant") {
     handleHighlight(currentTarget, 1);
@@ -33,7 +37,8 @@ const handleBubbling = (e) => {
 parent.addEventListener("click", handleBubbling);
 child.addEventListener("click", handleBubbling);
 descendant.addEventListener("click", handleBubbling);
+descendant.addEventListener("click", () => console.log("2 listener"));
 
-parent.addEventListener("click", handleBubbling, { capture: true });
-child.addEventListener("click", handleBubbling, { capture: true });
-descendant.addEventListener("click", handleBubbling, { capture: true });
+// parent.addEventListener("click", handleBubbling, { capture: true });
+// child.addEventListener("click", handleBubbling, { capture: true });
+// descendant.addEventListener("click", handleBubbling, { capture: true });
